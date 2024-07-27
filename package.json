@@ -1,0 +1,25 @@
+{
+  "name": "BeaconBox",
+  "version": "1.0.0",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "postinstall": "husky install",
+    "format": "eslint --fix && prettier --write"
+  },
+  "workspaces": [
+    "./*"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "zod": "^3.23.8"
+  },
+  
+  "devDependencies": {
+    "eslint": "^9.8.0",
+    "husky": "^9.1.3",
+    "lint-staged": "^15.2.7",
+    "prettier": "^3.3.3",
+    "typescript": "^5.5.4"
+  }
+}

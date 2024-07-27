@@ -8,8 +8,20 @@
     "format": "eslint --fix && prettier --write",
     "prepare": "husky"
   },
+  "husky":{
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged":{
+    "*.{js,json,css,md}": [
+      "prettier --singleQuote --write",
+      "git add"
+    ]    
+  },
+
   "workspaces": [
-    "./*"
+    "./packages*"
   ],
   "license": "MIT",
   "dependencies": {

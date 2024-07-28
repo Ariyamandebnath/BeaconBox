@@ -28,6 +28,7 @@
     "@emotion/styled": "^11.13.0",
     "@tabler/icons-react": "^3.11.0",
     "facepaint": "^1.2.1",
+    "hex-rgb": "^5.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "zod": "^3.23.8"

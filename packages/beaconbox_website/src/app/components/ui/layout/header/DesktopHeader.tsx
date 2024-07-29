@@ -87,11 +87,9 @@ const Arrow = styled.div<{ open: boolean }>`
     transform: ${(props) => (props.open ? 'rotate(180deg)' : 'rotate(0deg)')};
 `;
 
-type Props = {
-    numberOfStars: number;
-};
 
-export const HeaderDesktop = ({ numberOfStars }: Props) => {
+
+export const HeaderDesktop = () => {
     const [dropDownOpen, setdropdownOpen] = useState(false);
     const dropdownRef = useRef<HTMLDivElement>(null);
 

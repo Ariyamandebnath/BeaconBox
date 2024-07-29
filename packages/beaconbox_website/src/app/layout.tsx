@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { Gabarito, Inter } from 'next/font/google';
 
 import { AppHeader } from '@/app/components/ui/layout/header';
+import { FooterDesktop } from './components/ui/layout/DesktopFooter';
 
 
 import './layout.css';
@@ -9,9 +10,9 @@ import './layout.css';
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Twenty.com',
-  description: 'Open Source CRM',
-  icons: '/images/core/logo.svg',
+  title: 'BeaconBox.com',
+  description: 'Your digital Wallet',
+  icons: '@/images/LogoWhite.png',
 };
 
 const gabarito = Gabarito({
@@ -40,7 +41,7 @@ export default function RootLayout({
       <body>
           <AppHeader />
           <div className="container">{children}</div>
-          
+          <FooterDesktop />
       </body>
     </html>
   );

@@ -6,8 +6,7 @@ export const AppHeader = async () => {
 
   return (
     <>
-      <HeaderDesktop numberOfStars={8} />
-      
+      <HeaderDesktop />
     </>
   );
 };

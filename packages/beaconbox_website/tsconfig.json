@@ -35,7 +35,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/app/emotion-root-style-registry.js"
-  ],
+, "src/app/emotion_ssr_registry.js"  ],
   "exclude": [
     "node_modules"
   ]

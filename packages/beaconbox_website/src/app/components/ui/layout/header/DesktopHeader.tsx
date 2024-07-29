@@ -16,7 +16,7 @@ import {
 
 import { Logo } from "@/app/components/ui/layout/Logo";
 import { Theme } from "@/app/components/ui/theme/theme";
-import { NavOpen } from './styled';
+import { SignIn } from './Signin';
 const DropdownMenu = styled.ul<{ open: boolean }>`
     display: ${(props) => (props.open ? 'block' : 'none')};
     position: absolute;
@@ -44,7 +44,7 @@ const DropdownItem = styled.a`
     border-radius: 4px;
     font-size: 15px;
     &:hover {
-        background-color: #f1f1f1;
+        background-color: #4CCD99;
     }
 `;
 
@@ -61,7 +61,7 @@ const Dropdown = styled.div`
     position: relative;
     cursor: pointer;
     &:hover {
-        background-color: #f1f1f1;
+        background-color: #eaebd9;
     }
 `;
 
@@ -126,12 +126,16 @@ export const HeaderDesktop = ({ numberOfStars }: Props) => {
                 <ListItem href="/story">Story</ListItem>
                 <ListItem href="/pricing">Pricing</ListItem>
                 <ListItem href="/releases">Releases</ListItem>
+                <ListItem href="https://github.com/Ariyamandebnath/BeaconBox">
+                    <GithubIcon color="rgb(71,71,71)" />
+                    <ExternalArrow />
+                </ListItem>
                 <Dropdown
                     ref={dropdownRef}
                     style={{ position: 'relative' }}
                     onClick={toggleDropdown}
                 >
-                    Docs 
+                    Docs
                     <Arrow open={dropDownOpen}>
                         <StyledChevron>
                             <IconChevronDown size={Theme.icon.size.sm} />
@@ -139,21 +143,21 @@ export const HeaderDesktop = ({ numberOfStars }: Props) => {
                     </Arrow>
                     <DropdownMenu open={dropDownOpen}>
                         <DropdownItem href="/user-guide">
-                    <StyledIconContainer>
-                <IconBook size={Theme.icon.size.md} />
-                </StyledIconContainer>
-                    User Guide
-                </DropdownItem>
-                <DropdownItem href="/developers">
-                    <StyledIconContainer>
-                        <IconRobotFace size={Theme.icon.size.md} />
-                    </StyledIconContainer>
-                    Developers
-                </DropdownItem>
-            </DropdownMenu>
-        </Dropdown>
-        
-        </LinkList>
+                            <StyledIconContainer>
+                                <IconBook size={Theme.icon.size.md} />
+                            </StyledIconContainer>
+                            User Guide
+                        </DropdownItem>
+                        <DropdownItem href="/developers">
+                            <StyledIconContainer>
+                                <IconRobotFace size={Theme.icon.size.md} />
+                            </StyledIconContainer>
+                            Developers
+                        </DropdownItem>
+                    </DropdownMenu>
+                </Dropdown>
+            </LinkList>
+            <SignIn />
     </DesktopNav>
         
     )

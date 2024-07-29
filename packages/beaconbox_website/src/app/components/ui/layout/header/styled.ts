@@ -77,7 +77,7 @@ export const ListItem = styled.a`
   padding-left: 16px;
   padding-right: 16px;
   &:hover {
-    background-color: #f1f1f1;
+    background-color:  #4CCD99;
   }
 `;
 
@@ -114,7 +114,7 @@ export const StyledButton = styled.div`
   font-family: var(--font-gabarito);
 `;
 
-export const CallToActionContainer = styled.div`
+export const SignInContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 8px;
@@ -123,7 +123,7 @@ export const CallToActionContainer = styled.div`
   }
 `;
 
-export const LinkNextToCTA = styled.a`
+export const LinkNextToSignIn = styled.a`
   display: flex;
   align-items: center;
   color: rgb(71, 71, 71);

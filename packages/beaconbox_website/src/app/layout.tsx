@@ -3,8 +3,10 @@ import { Gabarito, Inter } from 'next/font/google';
 
 import { AppHeader } from '@/app/components/ui/layout/header';
 import { FooterDesktop } from './components/ui/layout/DesktopFooter';
+import { PublicEnvScript } from 'next-runtime-env';
 
 
+import EmotionRootStyleRegistry from './emotion_ssr_registry';
 import './layout.css';
 
 export const dynamic = 'force-dynamic';
@@ -39,9 +41,13 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${gabarito.variable} ${inter.variable}`}>
       <body>
+        <PublicEnvScript />
+        <EmotionRootStyleRegistry>
           <AppHeader />
           <div className="container">{children}</div>
           <FooterDesktop />
+        </EmotionRootStyleRegistry>
+          
       </body>
     </html>
   );

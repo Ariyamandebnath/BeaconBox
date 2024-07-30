@@ -1,8 +1,10 @@
+import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
 
 const LogoContainer = styled.div`
     display: flex;
     align-items: center;
+    gap: 8px;
 `;
 
 const LogoLink = styled.a`
@@ -15,20 +17,50 @@ const LogoLink = styled.a`
     width: 40px;
     background-image: url('/images/LogoWhite.png');
     opacity: 1;
-    margin-right: 10px; /* Adjust this value for spacing between logo and name */
 `;
 
 const LogoText = styled.span`
-    font-size: 20px; /* Adjust the font size as needed */
-    color: #000; /* Change the color as needed */
-    font-weight: bold; /* Adjust the font weight as needed */
+    font-size: 20px;
+    color: #000;
+    font-weight: bold;
 `;
 
-export const Logo = () => {
+const variants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { opacity: 1, x: 0 }
+};
+
+interface LogoProps {
+    animate?: boolean;
+}
+
+export const Logo = ({ animate = false }: LogoProps) => {
     return (
         <LogoContainer>
-            <LogoLink href="/" />
-            <LogoText>Beacon Box</LogoText> {/* Replace with your desired name */}
+            {animate ? (
+                <motion.div
+                    initial="hidden"
+                    animate="visible"
+                    variants={variants}
+                    transition={{ duration: 0.6, ease: 'easeOut' }}
+                >
+                    <LogoLink href="/" />
+                </motion.div>
+            ) : (
+                <LogoLink href="/" />
+            )}
+            {animate ? (
+                <motion.div
+                    initial="hidden"
+                    animate="visible"
+                    variants={variants}
+                    transition={{ duration: 0.6, ease: 'easeOut', delay: 0.3 }}
+                >
+                    <LogoText>Beacon Box</LogoText>
+                </motion.div>
+            ) : (
+                <LogoText>Beacon Box</LogoText>
+            )}
         </LogoContainer>
     );
-}
+};

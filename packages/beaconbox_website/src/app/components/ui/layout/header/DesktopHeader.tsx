@@ -118,7 +118,7 @@ export const HeaderDesktop = () => {
     return (
         <DesktopNav>
             <LogoContainer>
-                <Logo />
+                <Logo animate />
             </LogoContainer>
             <LinkList>
                 <ListItem href="/story">Story</ListItem>

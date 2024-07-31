@@ -56,10 +56,10 @@ export const Logo = ({ animate = false }: LogoProps) => {
                     variants={variants}
                     transition={{ duration: 0.6, ease: 'easeOut', delay: 0.3 }}
                 >
-                    <LogoText>Beacon Box</LogoText>
+                    <LogoText>BeaconBox</LogoText>
                 </motion.div>
             ) : (
-                <LogoText>Beacon Box</LogoText>
+                <LogoText>BeaconBox</LogoText>
             )}
         </LogoContainer>
     );

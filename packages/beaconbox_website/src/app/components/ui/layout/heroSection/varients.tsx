@@ -16,7 +16,7 @@ export const containerVariants = {
   show: {
     opacity: 1,
     transition: {
-      delay: 0.5, // Delay to allow background to fade in first
+      delay: 1, // Delay to allow background to fade in first
       staggerChildren: 0.2,
     },
   },

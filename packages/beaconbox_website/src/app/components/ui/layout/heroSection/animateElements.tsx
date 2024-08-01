@@ -41,6 +41,8 @@ export const Card = styled(motion.div)<MotionDivProps>`
   justify-content: center;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2); // Optional: shadow for card
   min-height: 55vh;
+
+  
 `;
 
 export const CashIcon = styled(motion.img)`

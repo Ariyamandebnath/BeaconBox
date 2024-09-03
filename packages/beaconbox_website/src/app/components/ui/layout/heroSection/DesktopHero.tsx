@@ -23,8 +23,10 @@ import {
   TitleDark,
   TitleParagraph,
   HeroCTA,
+  HeroSectionContainer
 
 } from './animateElements'
+
 
 
 export const Hero=()=> {
@@ -35,35 +37,35 @@ export const Hero=()=> {
   }, [controls]);
 
   return (
-      <div><MainContainer
+    <HeroSectionContainer>
+      <MainContainer
         initial="hidden"
         animate={controls}
       variants={backgroundVariants}
     >
-      <a href="https://x.com/AriyamanDe12_24" target="_blank" rel="noreferrer">
-        
-        <JoinCommunity
-          variants={buttonVariants}
-          initial="initial"
-          whileHover="hover"
-          whileTap="tap"
-          disabled={false} // Set to true to see the disabled state
-        >
-          Follow me on <XIcon size="M" />
-        </JoinCommunity>
-      </a>
-      
-      <TitleWrapper>
-        <TitleLight>#Beacon Box</TitleLight>
-        <TitleDark>Open-Source Wallet</TitleDark>
-        <TitleParagraph>Replicating how Modern ,Fast and Secure wallet applications work on there infratructures </TitleParagraph>
-
-        
-          <HeroCTA>
-            Your Button Text
-          </HeroCTA>
-        
-      </TitleWrapper>
+  <a href="https://x.com/AriyamanDe12_24">
+    <JoinCommunity
+      variants={buttonVariants}
+      initial="initial"
+      whileHover="hover"
+      whileTap="tap"
+      disabled={false} // Set to true to see the disabled state
+    >
+      Follow me on <XIcon size="M" />
+    </JoinCommunity>
+  </a>
+  
+  <TitleWrapper>
+    <TitleLight>#Beacon Box</TitleLight>
+    <TitleDark>Open-Source Wallet</TitleDark>
+    <TitleParagraph>
+      Replicating how Modern, Fast, and Secure wallet applications work on their infrastructures.
+    </TitleParagraph>
+    
+    <HeroCTA>
+      <a href="/api/auth/signin">Get Started</a>
+    </HeroCTA>
+  </TitleWrapper>
 
         <Card
           variants={containerVariants}
@@ -72,7 +74,7 @@ export const Hero=()=> {
           whileHover="hover"
         >
           <CashIcon
-            src="./images/dollar-bill.png"
+            src="./images/money.png"
             alt="Cash Bundle Icon"
             variants={iconHoverVariants}
             initial="hidden"
@@ -97,7 +99,7 @@ export const Hero=()=> {
           </HeroSubtitle>
         </Card>
       </MainContainer>
-      </div>
+      </HeroSectionContainer>
       
   );
 }

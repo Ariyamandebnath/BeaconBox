@@ -57,3 +57,10 @@ export const titleVariants = {
     },
   },
 };
+
+export const buttonVariants = {
+  initial: { scale: 1, opacity: 1 },
+  hover: { scale: 1.1, boxShadow: "0px 0px 8px rgba(0, 0, 0, 0.3)" },
+  tap: { scale: 0.95 },
+  disabled: { opacity: 0.5, cursor: 'not-allowed' }
+};

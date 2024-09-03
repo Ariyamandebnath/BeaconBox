@@ -15,7 +15,7 @@ const LogoLink = styled.a`
     border-radius: 8px;
     height: 40px;
     width: 40px;
-    background-image: url('/images/LogoWhite.png');
+    background-image: url('/images/logo.png');
     opacity: 1;
 `;
 

@@ -8,14 +8,22 @@ import {
   backgroundVariants,
   containerVariants,
   iconHoverVariants,
-  titleVariants
+  titleVariants,
+  buttonVariants
 } from './varients';
-
+import { XIcon } from '../../icons/svgIcons';
 import {
   MainContainer,
   Card,
   CashIcon,
   DollarSign,
+  JoinCommunity,
+  TitleWrapper,
+  TitleLight,
+  TitleDark,
+  TitleParagraph,
+  HeroCTA,
+
 } from './animateElements'
 
 
@@ -30,8 +38,33 @@ export const Hero=()=> {
       <div><MainContainer
         initial="hidden"
         animate={controls}
-        variants={backgroundVariants}
-      >
+      variants={backgroundVariants}
+    >
+      <a href="https://x.com/AriyamanDe12_24" target="_blank" rel="noreferrer">
+        
+        <JoinCommunity
+          variants={buttonVariants}
+          initial="initial"
+          whileHover="hover"
+          whileTap="tap"
+          disabled={false} // Set to true to see the disabled state
+        >
+          Follow me on <XIcon size="M" />
+        </JoinCommunity>
+      </a>
+      
+      <TitleWrapper>
+        <TitleLight>#Beacon Box</TitleLight>
+        <TitleDark>Open-Source Wallet</TitleDark>
+        <TitleParagraph>Replicating how Modern ,Fast and Secure wallet applications work on there infratructures </TitleParagraph>
+
+        
+          <HeroCTA>
+            Your Button Text
+          </HeroCTA>
+        
+      </TitleWrapper>
+
         <Card
           variants={containerVariants}
           initial="hidden"

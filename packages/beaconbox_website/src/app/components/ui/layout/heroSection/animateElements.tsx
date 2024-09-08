@@ -22,6 +22,7 @@ export const MainContainer = styled(motion.div)`
 // Button with animation
 export const JoinCommunity = styled(motion.button)`
   background-color: white;
+  margin: auto;
   border-radius: 500px;
   padding: 8px 24px;
   font-size: 14px;
@@ -60,6 +61,7 @@ export const JoinCommunity = styled(motion.button)`
 // Title Wrapper with animation
 export const TitleWrapper = styled(motion.div)`
   border-radius: 50px;
+  margin: 15px;
   align-content: center;
   align-items: center;
   display: flex;

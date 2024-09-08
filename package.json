@@ -27,6 +27,7 @@
     "@codesandbox/sandpack-react": "^2.18.2",
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
+    "@next-auth/prisma-adapter": "^1.0.7",
     "@tabler/icons-react": "^3.11.0",
     "@types/bcrypt": "^5.0.2",
     "bcrypt": "^5.1.1",

@@ -2,44 +2,54 @@ import express from 'express';
 import db from "../beaconbox_db/src";
 
 const app = express();
-app.use(express.json()); // Ensure you can parse JSON request bodies
+app.use(express.json()); 
 
 app.post("/bankWebhook", async (req, res) => {
+    const paymentInformation: {
+        token: string;
+        userId: string;
+        amount: string;
+
+    } = {
+        token: req.body.token,
+        userId: req.body.userId,
+        amount: req.body.amount,
+    };
+
     try {
-        const { token, userId, amount } = req.body;
-
-        if (!token || !userId || !amount) {
-            return res.status(400).json({ message: "Missing required fields" });
-        }
-
-        // Update the user's balance in the database
-        await db.balance.update({
-            where: {
-                userId: userId
-            },
-            data: {
-                amount: {
-                    increment: amount
+        await db.$transaction([
+            db.balance.updateMany({
+                where: {
+                    userId: Number(paymentInformation.userId)
+                },
+                data: {
+                    amount: {
+                        increment: Number
+                            (paymentInformation.amount)
+                    }
                 }
-            }
-        });
+            }),
+            db.onRampTransactions.updateMany({
+                where: {
+                    token:paymentInformation.token
+                },
+                data: {
+                    status: "Success",
+                }
+            })
+        ])
 
-        // Update the transaction status
-        await db.onRampTransactions.update({
-            where: {
-                token: token
-            },
-            data: {
-                status: "Success"
-            }
-        });
-
-        // Respond with success
-        return res.status(200).json({ message: "Balance updated and transaction status set to success" });
-    } catch (error) {
-        console.error("Error processing request:", error);
-        return res.status(500).json({ message: "Internal server error" });
+        res.json({
+            message: "Captured"
+        })
+    } catch (e) {
+        console.error(e);
+        res.status(411).json({
+            message: "Error while processing webhook"
+        })
     }
-});
 
-export default app;
+})
+
+
+app.listen(3000);

@@ -36,6 +36,7 @@ export const Hero=()=> {
     controls.start('show');
   }, [controls]);
 
+
   return (
     <HeroSectionContainer>
       <MainContainer

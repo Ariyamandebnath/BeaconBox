@@ -17,6 +17,7 @@
     "skipDefaultLibCheck": true,
     "resolveJsonModule": true,
     "baseUrl": ".",
+    "jsx": "react-jsx"
 //    "paths": {
 //      "beaconbox_email": ["packages/twenty-emails/src/index.ts"],
  //     "beaconbox_ui": ["packages/twenty-ui/src/index./ts"]

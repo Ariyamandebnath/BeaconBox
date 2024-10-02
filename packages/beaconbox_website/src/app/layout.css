@@ -38,7 +38,7 @@ body {
 }
 
 a {
-  color: rgb(129, 129, 129);
+  color: rgb(141, 140, 140);
   &:hover {
     color: #000;
   }

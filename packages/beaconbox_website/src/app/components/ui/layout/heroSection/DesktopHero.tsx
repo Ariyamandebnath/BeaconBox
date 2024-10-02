@@ -36,7 +36,6 @@ export const Hero=()=> {
     controls.start('show');
   }, [controls]);
 
-
   return (
     <HeroSectionContainer>
       <MainContainer
@@ -52,7 +51,7 @@ export const Hero=()=> {
       whileTap="tap"
       disabled={false} // Set to true to see the disabled state
     >
-      Follow me on <XIcon size="M" />
+      Follow me on here <XIcon size="M" /> 
     </JoinCommunity>
   </a>
   
@@ -90,8 +89,13 @@ export const Hero=()=> {
           >
             $
           </DollarSign>
-          <HeroTitle variants={titleVariants} initial="hidden" animate="show">
-            The Future of Digital Wallets
+          
+          <HeroTitle
+            variants={titleVariants}
+            initial="hidden"
+            animate="show"
+          >
+          The Future of Digital Wallets
           </HeroTitle>
           <HeroSubtitle variants={textVariants}>
             Decentralizing your transactions and ensuring top-notch security for

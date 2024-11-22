@@ -1,5 +1,5 @@
 # BeaconBox
-This her is a fullstack wallet web appliction that let you store ,transect , and monitor your financial execution through-out you using it 
+This here is a fullstack wallet web appliction that let you store ,transect , and monitor your financial execution through-out you using it 
 
 ## Technicallities 
 
